@@ -1,6 +1,7 @@
 import 'package:card_app/test_file.dart';
 import 'package:flutter/material.dart';
 
+import 'drawer.dart';
 import 'item.dart';
 import 'item_detail.dart';
 
@@ -19,8 +20,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
   List<Item> items = [
-    Item("AAAAA", "aaaaaa", "AAAAAA"),
-    Item("BBBBBB", "bbbbbb", "AAAAAA"),
+    Item("assets/images/momos.jpg", "aaaaaa", "AAAAAA"),
+    Item("assets/images/bonda.jpg", "bbbbbb", "AAAAAA"),
     Item("CCCCCCC", "ccccccccc", "AAAAAA"),
     Item("DDDDD", "dddddddd", "AAAAAA"),
     Item("EEEEEE", "eeeeeee", "AAAAAA"),
@@ -65,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
               borderRadius: new BorderRadius.circular(10.0),
               child: Image(
                 fit: BoxFit.fill,
-                image: AssetImage('assets/images/momos.jpg'),
+                image: AssetImage(items[1].itemImage),
                 width: 100.0,
                 height: 100.0,
               ),
@@ -124,7 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title:  Text("Card"),),
+        appBar: AppBar(title:  Text("Zomato"),),
         // body: Column(
         //   // children: items.map((item) => Text('${item.itemImage}  ${item.itemName}  ${item.itemPrice}')).toList(),
         //
@@ -145,7 +146,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
 
 
-
+        drawer: MyDrawer(),
 
       ),
     );
